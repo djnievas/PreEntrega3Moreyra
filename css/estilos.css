@@ -1,4 +1,3 @@
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -126,45 +125,42 @@ dialog {
     color: #666;
 }
 
+.navigation-menu ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-menu li {
+    margin-right: 20px;
+}
+
+.navigation-menu li:last-child {
+    margin-right: 0;
+}
+
+.main-header h1 {
+    margin-bottom: 20px;
+}
+
+/* Estilos para pantallas pequeñas (max-width: 768px) */
 @media screen and (max-width: 768px) {
     .navigation-menu ul {
         flex-direction: column;
     }
 
     .navigation-menu li {
+        margin-right: 0;
         margin-bottom: 10px;
     }
 
     .navigation-menu li:last-child {
         margin-bottom: 0;
     }
-}
 
-@media screen and (max-width: 480px) {
     .main-header h1 {
-        display: none;
+        font-size: 24px;
     }
 
-    .navigation-menu ul {
-        position: fixed;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        
-    }
-
-    .navigation-menu ul.show {
-        transform: translateY(0);
-    }
-
-    .navigation-menu li {
-        text-align: center;
-    }
-}
-
-
-@media screen and (max-width: 480px) {
     main {
         padding: 1rem;
     }
@@ -178,30 +174,28 @@ dialog {
     }
 }
 
-@media screen and (max-width: 600px) {
+/* Estilos para pantallas muy pequeñas (max-width: 480px) */
+@media screen and (max-width: 480px) {
     .navigation-menu ul {
-        flex-direction: column;
-        align-items: center;
+        position: fixed;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        transform: translateY(-100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .navigation-menu ul.show {
+        transform: translateY(0);
     }
 
     .navigation-menu li {
-        margin-right: 0;
-        margin-bottom: 10px;
+        text-align: center;
     }
 
     main {
         padding: 1rem;
-    }
-
-    img {
-        max-width: 100%;
-    }
-}
-
-
-@media screen and (max-width: 400px) {
-    .navigation-menu ul {
-        margin-top: 10px;
     }
 
     footer {
@@ -211,4 +205,9 @@ dialog {
         right: 0;
         background-color: rgba(51, 51, 51, 0.8);
     }
+
+    img {
+        max-width: 100%;
+    }
 }
+
